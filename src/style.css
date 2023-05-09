@@ -114,3 +114,34 @@ h4{
 a{
   color: white;
 }
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.word {
+  flex-shrink: 0;
+  font-size: 24px;
+  padding: 0 20px;
+  color: gray;
+  text-align: center;
+  transition: ease 0.4s;
+}
+
+.word.active {
+  color: white;
+  font-weight: bold;
+}
+
+.word:hover {
+  cursor: pointer;
+}

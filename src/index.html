@@ -1,57 +1,3 @@
-<!-- <html lang="en">
-
-<head>
-    <meta name="google-site-verification" content="U7Y7wLZvFvmIaFWsMz-RDxYe7Fuqx6DAsfLOasD5XYw" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <div>
-        <input type="range" id="mySlider" min="0" max="100" value="50" orient="vertical" />
-    </div>
-    <div>
-
-        <a href="https://courses.edx.org/certificates/2a4b83672d6c483a89d2c45c6eea2e02">CS50X</a>
-        <br>
-        <a href="https://static.semrush.com/academy/certificates/1b3ff3e15c/koramist-samorapoom_1.pdf">SEO
-            Fundamentals</a>
-        <br>
-        <a href="https://courses.cognitiveclass.ai/certificates/8df21fbab9dd4694854af298a2d66d7d">Deep Learning
-            Fundamentals</a>
-        <br>
-        <a href="https://cs50.harvard.edu/certificates/0a27143f-9e27-42b9-958e-f997fa48e90d">CS50P</a>
-        <br>
-        <a href="https://cs50.harvard.edu/certificates/90baa363-e9ab-412f-b35b-fff8947ccd9f">CS50S</a>
-        <br>
-        <a
-            href="https://mycourseville-default.s3.ap-southeast-1.amazonaws.com/system_course_files/2022_2/34719/cvcert_usercert/certificate_34719_960488-960488-16833024390212.jpg">จุฬา
-            Critical Thinking for Buissness Course</a>
-        <br>
-        <a
-            href="https://mycourseville-default.s3.ap-southeast-1.amazonaws.com/system_course_files/2022_2/34721/cvcert_usercert/certificate_34721_960488-960488-16833098003626.jpg">จุฬา
-            English Course</a>
-        <br>
-        <a href="https://timetables.newton.ac.th">Lead Front-End Newton Timetables</a>
-        <br>
-        <a href="https://news.newton.ac.th/members">Newtonian Content Manager</a>
-        <br>
-        <a href="https://drive.google.com/file/d/1rWbgMrAFL7zxOqD77mt9N59WW-k7EI20/view">Japan Debate Open
-            Quarterfinalist</a>
-        <br>
-        <a href="https://www.chess.com/member/ongsas">Chess</a>
-        <br>
-        <a href="https://learn.microsoft.com/en-us/users/koramistsamorapoom-4941/transcript/v250pin0mj0qxlk">Microsoft
-            Transcript</a>
-    </div>
-</body>
-
-</html> -->
-
-
 <html lang="en">
 
 <head>
@@ -69,13 +15,60 @@
     <div class="top-section">
       <h1>Koramist Samorapoom</h1>
       <h3>Portfolio</h3>
-      <p>Hi, my name is Koramist Samorapoom. I'm 15, born during April 24th 2008. I'm from Thailand. I am a student
-        aspiring to
-        do many thing and study as many topics as I can. My motivation stems from my goal; To live, not to simply exist.
-        Making this project was quite fun,
-        I hope you enjoy this portfolio of me that I have made.
+      <p>My name is Koramist Samorapoom. I'm 15, born during April 24th 2008. I'm from Thailand. Currently I am learning
+        at Newton Sixth Form. I am a student
+        aspiring to do many thing and study as many topics as I can. Making this project was quite fun, I hope you enjoy
+        this portfolio of me that I have made.
       </p>
     </div>
+
+    <div class="carousel">
+      <div class="word" onclick="scrollToElement('2023')">2019</div>
+      <div class="word" onclick="scrollToElement('2023')">2020</div>
+      <div class="word" onclick="scrollToElement('2023')">2021</div>
+      <div class="word" onclick="scrollToElement('2023')">2022</div>
+      <div class="word" onclick="scrollToElement('2023')">2023</div>
+    </div>
+
+    <script>
+      let words = document.querySelectorAll('.word');
+      let carousel = document.querySelector('.carousel');
+      let activeWord = 2;
+
+      let carouselWidth = carousel.offsetWidth;
+      let wordWidth = words[activeWord].offsetWidth;
+      let offset = (carouselWidth / 2) - (wordWidth / 2);
+      carousel.scrollLeft = words[activeWord].offsetLeft - offset;
+
+      carousel.addEventListener('mouseover', function () {
+        carousel.classList.add('hover');
+        words[activeWord].classList.add('active');
+      });
+
+      carousel.addEventListener('mouseout', function () {
+        carousel.classList.remove('hover');
+        words[activeWord].classList.remove('active');
+      });
+
+      words.forEach(function (word, index) {
+        word.addEventListener('mouseover', function () {
+          words[activeWord].classList.remove('active');
+          activeWord = index;
+          if (carousel.classList.contains('hover')) {
+            words[activeWord].classList.add('active');
+          }
+          let wordWidth = words[activeWord].offsetWidth;
+          let offset = (carouselWidth / 2) - (wordWidth / 2);
+          carousel.scrollLeft = words[activeWord].offsetLeft - offset;
+        });
+      });
+
+      function scrollToElement(id) {
+        const element = document.getElementById(id);
+        element.scrollIntoView({ behavior: "smooth" });
+        event.preventDefault();
+      }
+    </script>
 
     <div class="timeline">
       <div class="line"></div>
@@ -135,7 +128,7 @@
       <div class="section">
         <div class="bead"></div>
         <div class="content">
-          <h2>Line Hackathon Semi-Finals</h2>
+          <h2 id="2023">Line Hackathon Semi-Finals</h2>
           <h4>January 24, 2023</h4>
           <p>Particpated and made it through to Line Hackathon Semi-Finals, currently bot is not working due to
             inactivity</p>
