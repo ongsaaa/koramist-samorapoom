@@ -5,8 +5,17 @@ body{
   line-height: 1.5;
   font-weight: 400;
   color: white;
-  background-color: #4c4177;
-  background-image: linear-gradient(315deg, #1C1C1C 0%, #312F3E 74%);
+  background-color: #183446;
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: opacity 800ms ease, 
+    background-size 800ms ease,
+    background-position 800ms ease;
+  width: 100vw;
+  z-index: 1;
 }
 
 body::-webkit-scrollbar {
@@ -45,8 +54,8 @@ html, body {
   width: 2px;
   top: -50px;
   bottom: -50px;
-  background-color: #000;
   display: none;
+  background-color: #000;
 }
 
 .line:before,
@@ -155,3 +164,4 @@ a{
 .word:hover {
   cursor: pointer;
 }
+
