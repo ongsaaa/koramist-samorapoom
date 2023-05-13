@@ -1,0 +1,107 @@
+body {
+  background-color: #18344680;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+*,
+:before,
+:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  text-align: center;
+  line-height: 20px
+}
+
+h1 {
+  color: rgba(0, 0, 0, .8);
+}
+
+h2 {
+  color: rgba(0, 0, 0, .2);
+}
+
+.social-container {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 200px;
+  height: 100%;
+}
+
+#social-section {
+  padding: 60px 0;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.social-container a {
+  display: block;
+  width: 200px;
+  line-height: 40px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  color: rgba(0, 0, 0, .6);
+  margin: 20px 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.social-container a::before {
+  background-color: transparent;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.social-container a i {
+  margin-right: 15px;
+}
+
+.social-container a:hover {
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: black;
+}
+
+.twitter:hover::before {
+  background-color: #00aced;
+}
+
+.facebook:hover::before {
+  background-color: #3b5998;
+}
+
+.github:hover::before {
+  background-color: #0d111769;
+}
+
+.googleplus:hover::before {
+  background-color: #dd4b39;
+}
+
+.dribbble:hover::before {
+  background-color: #ea4c89;
+}
+
+.instagram:hover::before {
+  background-color: #417399;
+}
+
+.social-container a,
+.social-container a::before {
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
